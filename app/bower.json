@@ -1,0 +1,31 @@
+{
+  "name": "home-performance-publish",
+  "main": "app/index.html",
+  "authors": [
+    "Larry Burks"
+  ],
+  "description": "Electron and AngularJS app to automate publishing home performance data.",
+  "repository": {
+    "type": "https",
+    "url": "https://lburks@bitbucket.org/lburks/home-performance-publish.git"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "1.5.9",
+    "moment": "2.17.1",
+    "angular": "1.5.9",
+    "angular-resource": "1.5.9",
+    "bootstrap": "3.3.7",
+    "electangular": "https://raw.githubusercontent.com/develephant/electangular/master/electangular.js"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.5.9"
+  }
+}

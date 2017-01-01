@@ -1,0 +1,11 @@
+<section id="local_server">
+  <h2>Local Server</h2>
+  <div class="form-horizontal">
+    <div class="form-group">
+      <label for="server-action" class="col-sm-4 control-label">{{ serverStatus.response }}</label>
+      <div class="col-sm-8">
+        <button type="button" ng-click="serverStartStop()" ng-disabled="!status.database" class="btn btn-primary" id="server-action">{{ serverStatus.action }}</button>
+      </div>
+    </div>
+  </div>
+</section>

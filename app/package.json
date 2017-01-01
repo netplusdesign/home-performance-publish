@@ -1,0 +1,10 @@
+{
+  "name": "home-performance-publish",
+  "description": "Electron AngularJS desktop app to update home performance data",
+  "version": "0.1.0",
+  "main": "main.js",
+  "dependencies": {
+    "jsonfile": "^2.4.0",
+    "nconf": "^0.8.4"
+  }
+}

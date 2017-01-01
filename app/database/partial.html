@@ -1,0 +1,32 @@
+<section id="local_db">
+  <h2>Local Database</h2>
+  <div class="form-horizontal">
+    <div class="form-group">
+      <label for="database-action" class="col-sm-4 control-label">{{ databaseStatus.response }}</label>
+      <div class="col-sm-8">
+        <button type="button" ng-click="databaseStartStop()" class="btn btn-primary" id="database-action">{{ databaseStatus.action }}</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="database-backup" class="col-sm-4 control-label">Backup database</label>
+      <div class="col-sm-8">
+        <button type="button" ng-click="databaseBackup()" ng-disabled="databaseStatus.response == 'Stopped'" class="btn btn-primary" id="database-backup">Backup</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="database-restore" class="col-sm-4 control-label">Restore last backup</label>
+      <div class="col-sm-6">
+        <select class="form-control input-sm" id="year" ng-model="databaseStatus.backupSelected" ng-disabled="databaseStatus.response == 'Stopped'" ng_options="backup for backup in databaseStatus.backups"></select>
+      </div>
+      <div class="col-sm-2">
+        <button type="button" ng-click="databaseRestore()" ng-disabled="databaseStatus.response == 'Stopped'" class="btn btn-primary" id="database-restore">Restore</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Restore status</label>
+      <div class="col-sm-8">
+        <pre class="form-control-static">{{ databaseStatus.restore }}</pre>
+      </div>
+    </div>
+  </div>
+</section>

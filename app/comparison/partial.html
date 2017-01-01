@@ -1,0 +1,29 @@
+<section id="comparison_table">
+  <h2>Comparison Tables</h2>
+
+  <div class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Interval</label>
+      <div class="col-sm-4 btn-group" role="group" aria-label="...">
+        <button type="button" ng-click="compare('months')" class="btn btn-default" ng-class="{active: comparison.interval=='months'}">Months</button>
+        <button type="button" ng-click="compare('years')" class="btn btn-default" ng-class="{active: comparison.interval=='years'}">Years</button>
+      </div>
+      <div class="col-sm-4">
+        <button type="button" ng-click="updateData()" class="btn btn-primary" id="update-data">Load data</button>
+      </div>
+    </div>
+  </div>
+
+  <p ng-class="{'alert alert-danger': warning}">{{message}}</p>
+
+  <div ng-include="comparison.template" id="comparison-tables"></div>
+
+  <div class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-6 control-label"> </label>
+      <div class="col-sm-4">
+        <button type="button" copy-as-html element="#comparison-tables" class="btn btn-primary" id="copy-html">Copy HTML</button>
+      </div>
+    </div>
+  </div>
+</section>

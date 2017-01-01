@@ -1,0 +1,30 @@
+<table style="border-collapse: collapse; empty-cells: show; text-align: right; border: 1px solid #ccc; margin: 0 0 5px; padding: 0; font-size: .8em;">
+  <thead>
+    <tr style="border-bottom: 1px solid #ccc;">
+      <th style="padding: 3px 10px;"></th>
+      <th style="padding: 3px 10px; text-align: right;">Usage</th>
+      <th style="padding: 3px 10px; text-align: right;">Solar PV</th>
+      <th style="padding: 3px 10px; text-align: right;">Net usage <br>or <span style="color: #ff0000;">(surplus)</span></th>
+      <th style="padding: 3px 10px; text-align: right;">Avg. <br>daily usage</th>
+      <th style="padding: 3px 10px; text-align: right;">HDD</th>
+    </tr>
+    <tr style="border-bottom: 1px solid #ccc;">
+      <th style="padding: 3px 10px;">Total</th>
+      <th style="padding: 3px 10px; text-align: right;">{{years.totals.used | number:0}}</th>
+      <th style="padding: 3px 10px; text-align: right;">{{-years.totals.solar | number:0}}</th>
+      <th style="padding: 3px 10px; text-align: right;"><span ng-if="years.totals.net<0" ><span style="color: #ff0000;">({{ -years.totals.net | number:0 }})</span></span><span ng-if="years.totals.net>=0" >{{ years.totals.net | number:0 }}</span></th>
+      <th style="padding: 3px 10px; text-align: right;">{{years.totals.adu | number:1}}</th>
+      <th style="padding: 3px 10px; text-align: right;">{{years.totals.hdd | number:0}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="border-bottom: 1px solid #ccc;" ng-repeat="item in years.items"><!-- repeat -->
+      <td style="padding: 3px 10px; text-align: left;"><a href="http://netplusdesign.com/#/months/summary?house={{house}}&date={{item.date | date:'yyyy-MM'}}" target="_blank">{{item.date | date:"yyyy"}}</a></td>
+      <td style="padding: 3px 10px;">{{item.used | number:0}}</td>
+      <td style="padding: 3px 10px;">{{-item.solar | number:0}}</td>
+      <td style="padding: 3px 10px;"><span ng-if="item.net<0" ><span style="color: #ff0000;">({{ -item.net | number:0 }})</span><span ng-if="item.net>=0" >{{ item.net | number:0 }}</span></td>
+      <td style="padding: 3px 10px;">{{item.adu | number:1}}</td>
+      <td style="padding: 3px 10px;">{{item.hdd | number:0}}</td>
+    </tr><!-- /repeat -->
+  </tbody>
+</table>

@@ -1,0 +1,39 @@
+<section id="remote_update">
+  <h2>Remote Update</h2>
+  <div class="form-horizontal">
+    <div class="form-group">
+      <label for="store-ip" class="col-sm-4 control-label">Stored IP address</label>
+      <div class="col-sm-3">
+        <p class="form-control-static">{{ remoteUpdateStatus.ipStored }} <span ng-show="remoteUpdateStatus.ipStored == remoteUpdateStatus.ipCurrent" class="glyphicon glyphicon-ok" aria-hidden="true"></span></p>
+      </div>
+      <div class="col-sm-3">
+        <button type="button" ng-click="storeIP()" ng-disabled="remoteUpdateStatus.ipStored == remoteUpdateStatus.ipCurrent" class="btn btn-primary" id="store-ip">Store new IP</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Current IP address</label>
+      <div class="col-sm-8">
+        <p class="form-control-static">{{ remoteUpdateStatus.ipCurrent }}</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="remote-run-update" class="col-sm-4 control-label">Remote server</label>
+      <div class="col-sm-8">
+        <button type="button" ng-click="remoteUpdate()" ng-disabled="remoteUpdateStatus.ipStored != remoteUpdateStatus.ipCurrent" class="btn btn-primary" id="remote-run-update" aria-describedby="helpBlock">Run Update</button>
+        <span id="helpBlock" class="help-block">Current IP must match stored IP. Update remote access IP on remote server, then hit 'Store new IP'.</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Update status</label>
+      <div class="col-sm-8">
+        <pre class="form-control-static">{{ remoteUpdateStatus.status }}</pre>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="remote-browse" class="col-sm-4 control-label">Remote site</label>
+      <div class="col-sm-8">
+        <button type="button" ng-click="remoteBrowse()" class="btn btn-primary" id="remote-browse">Browse</button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,95 @@
+<section id="settings">
+  <h2>Settings</h2>
+  <div class="form-horizontal">
+    <div class="form-group">
+      <label for="shell-path" class="col-sm-4 control-label">Shell script path</label>
+      <div class="col-sm-8">
+        <input type="text" ng-model="settings.shellPath" ng-change="updateSetting('shell-path', settings.shellPath)" id="shell-path" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="batch-path" class="col-sm-4 control-label">Batch file path</label>
+      <div class="col-sm-8">
+        <input type="text" ng-model="settings.batchPath" ng-change="updateSetting('batch-path', settings.batchPath)" id="batch-path" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="template-path-file" class="col-sm-4 control-label">Batch template path and name</label>
+      <div class="col-sm-8">
+        <input type="text" ng-model="settings.templatePathFile" ng-change="updateSetting('template-path-file', settings.templatePathFile)" id="template-path-file" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="temperature-source-path" class="col-sm-4 control-label">Temperature data source path</label>
+      <div class="col-sm-8">
+        <input type="text" ng-model="settings.temperatureSourcePath" ng-change="updateSetting('temperature-source-path', settings.temperatureSourcePath)" id="temperature-source-path" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="temperature-target-path" class="col-sm-4 control-label">Temperature data target path</label>
+      <div class="col-sm-8">
+        <input type="text" ng-model="settings.temperatureTargetPath" ng-change="updateSetting('temperature-target-path', settings.temperatureTargetPath)" id="temperature-target-path" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="temperature-locations" class="col-sm-4 control-label">Number of temperature locations</label>
+      <div class="col-sm-8">
+        <input type="number" ng-model="settings.temperatureLocations" ng-change="updateSetting('temperature-locations', settings.temperatureLocations)" id="temperature-locations" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="database-name" class="col-sm-4 control-label">Database name</label>
+      <div class="col-sm-8">
+        <input type="text" ng-model="settings.databaseName" ng-change="updateSetting('database-name', settings.databaseName)" id="database-name" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="database-password" class="col-sm-4 control-label">Database password</label>
+      <div class="col-sm-8">
+        <input type="password" ng-model="settings.databasePassword" ng-change="updateSetting('database-password', settings.databasePassword)" id="database-password" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="database-backup-path" class="col-sm-4 control-label">Database backup path</label>
+      <div class="col-sm-8">
+        <input type="text" ng-model="settings.databaseBackupPath" ng-change="updateSetting('database-backup-path', settings.databaseBackupPath)" id="database-backup-path" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="flask-server" class="col-sm-4 control-label">Flask server path</label>
+      <div class="col-sm-8">
+        <input type="text" ng-model="settings.flaskServer" ng-change="updateSetting('flask-server', settings.flaskServer)" id="flask-server" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="flask-config" class="col-sm-4 control-label">Flask config</label>
+      <div class="col-sm-8">
+        <input type="text" ng-model="settings.flaskConfig" ng-change="updateSetting('flask-config', settings.flaskConfig)" id="flask-config" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="flask-upload-app" class="col-sm-4 control-label">Flask upload app</label>
+      <div class="col-sm-8">
+        <input type="text" ng-model="settings.flaskUploadApp" ng-change="updateSetting('flask-upload-app', settings.flaskUploadApp)" id="flask-upload-app" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="local-browse" class="col-sm-4 control-label">Local site browse</label>
+      <div class="col-sm-8">
+        <input type="text" ng-model="settings.localSite" ng-change="updateSetting('local-site', settings.localSite)" id="local-browse" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="remote-browse" class="col-sm-4 control-label">Remote site browse</label>
+      <div class="col-sm-8">
+        <input type="text" ng-model="settings.remoteSite" ng-change="updateSetting('remote-site', settings.remoteSite)" id="remote-browse" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="api-url" class="col-sm-4 control-label">Remote API URL</label>
+      <div class="col-sm-8">
+        <input type="text" ng-model="settings.apiUrl" ng-change="updateSetting('api-url', settings.apiUrl)" id="api-url" class="form-control">
+      </div>
+    </div>
+  </div>
+</section>

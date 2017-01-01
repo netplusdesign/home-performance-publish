@@ -1,0 +1,84 @@
+{
+    "house_id": 0,
+    "path": "/Users/larry/documents/978/data/final/",
+    "energy": [
+        {
+            "device_id": 10,
+            "type": "egauge",
+            "base_url": ["http://192.168.1.8", "http://192.168.1.7"],
+            "start_datetime": "2016-07-01 00:00:00",
+            "end_datetime": "2016-10-01 00:00:00",
+            "timezone": "US/Eastern",
+            "interval": "hours",
+            "column_list": [
+                            ["date","used","gen","grid","solar","solar_plus","water_heater","ashp","water_pump","dryer","washer","dishwasher","stove"],
+                            ["date","used_dup","gen_dup","refrigerator","living_room","aux_heat_bedrooms","aux_heat_living","study","barn","basement_west","basement_east","kitchen_recept_rt","ventilation"]
+                           ]
+        }
+    ],
+    "temperature": [
+        {
+            "device_id": 0,
+            "location": "outdoor",
+            "filename": "temperature-hourly-outdoor-0000-00-00.csv"
+        },
+        {
+            "device_id": 1,
+            "location": "firstfloor",
+            "filename": "temperature-hourly-firstfloor-0000-00-00.csv"
+        },
+        {
+            "device_id": 2,
+            "location": "secondfloor",
+            "filename": "temperature-hourly-secondfloor-0000-00-00.csv"
+        },
+        {
+            "device_id": 3,
+            "location": "basementfloor",
+            "filename": "temperature-hourly-basementfloor-0000-00-00.csv"
+        }
+    ],
+    "estimated": [
+        {
+            "filename": "estimated-2016.csv"
+        }
+    ],
+    "water": [
+        {
+            "device_id": 6,
+            "type": "main",
+            "date": "2016-07-01",
+            "gallons": 2307.8
+        },
+        {
+            "device_id": 7,
+            "type": "hot",
+            "date": "2016-07-01",
+            "gallons": 342.2
+        },
+        {
+            "device_id": 6,
+            "type": "main",
+            "date": "2016-08-01",
+            "gallons": 2089.9
+        },
+        {
+            "device_id": 7,
+            "type": "hot",
+            "date": "2016-08-01",
+            "gallons": 409.0
+        },
+        {
+            "device_id": 6,
+            "type": "main",
+            "date": "2016-09-01",
+            "gallons": 2132.8
+        },
+        {
+            "device_id": 7,
+            "type": "hot",
+            "date": "2016-09-01",
+            "gallons": 515.0
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+.navbarx {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  color: white;
+  background-color: gray;
+}
+
+#sidenav {
+  position: fixed;
+  top: 0;
+  width: 200px;
+  padding: 54px 0 0 15px;
+}
+
+#main {
+  width: 70%;
+  margin: 54px 0 0 28%;
+}
+
+section {
+  padding-bottom: 100px;
+}
+
+section > h2:before {
+  height: 80px;
+  content: "";
+  display: block;
+  margin: -54px 0 0;
+}
+
+h2 {
+  margin-bottom: 50px;
+}
+
+#comparison-tables {
+  overflow-x: scroll;
+  clear: left;
+  padding: 20px 0;
+}
+
+#table-code {
+  /* visibility: hidden; */
+}
+
+#footer p {
+  position: fixed;
+  top: 550px;
+  width: 100%;
+  color: white;
+  background-color: gray;
+  padding: 5px 15px;
+  margin-bottom: 0;
+}

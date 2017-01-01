@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+  <title>home-performance-publish</title>
+  <meta name="description" content="home-performance-publish layout">
+  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div id="main" ng-view></div>
+
+  <nav class="navbarx">
+    <div>
+      <span class="navbar-brand">Home Performance Publisher</span>
+    </div>
+  </nav>
+
+  <div id="sidenav">
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#/settings" role="button">Settings</a></li>
+      <li><a href="#/start" role="button">Start</a></li>
+      <li><a href="#/water" role="button">Water</a></li>
+      <li><a href="#/temperature" role="button">Temperature</a></li>
+      <li><a href="#/database" role="button">Local DB</a></li>
+      <li><a href="#/server" role="button">Local Server</a></li>
+      <li><a href="#/local" role="button">Local Update</a></li>
+      <li><a href="#/remote" role="button">Remote Update</a></li>
+      <li><a href="#/comparison" role="button">Comparison Tables</a></li>
+    </ul>
+  </div>
+
+  <div id="footer">
+    <p>&copy; netplusdesign 2016</p>
+  </div>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/electangular/index.js"></script>
+  <script src="bower_components/moment/min/moment.min.js"></script>
+  <script src="app.js"></script>
+  <script src="services.js"></script>
+  <script src="shared/dataprovider.service.js"></script>
+  <script src="shared/data.service.js"></script>
+  <script src="controllers.js"></script>
+  <script src="directives.js"></script>
+  <script src="settings/settings.controller.js"></script>
+  <script src="start/start.controller.js"></script>
+  <script src="water/water.controller.js"></script>
+  <script src="temperature/temperature.controller.js"></script>
+  <script src="database/database.controller.js"></script>
+  <script src="server/server.controller.js"></script>
+  <script src="local/updatelocal.controller.js"></script>
+  <script src="remote/updateremote.controller.js"></script>
+  <script src="comparison/comparison.controller.js"></script>
+</body>
+</html>

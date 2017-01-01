@@ -1,0 +1,23 @@
+<section id="local_update">
+  <h2>Local Update</h2>
+  <div class="form-horizontal">
+    <div class="form-group">
+      <label for="local-run-update" class="col-sm-4 control-label">Local server</label>
+      <div class="col-sm-8">
+        <button type="button" ng-click="localUpdate()" ng-disabled="!(status.database&&status.server)" class="btn btn-primary" id="local-run-update">Run Update</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Update status</label>
+      <div class="col-sm-8">
+        <pre class="form-control-static">{{ localUpdateStatus.status }}</pre>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="local-browse" class="col-sm-4 control-label">Local site</label>
+      <div class="col-sm-8">
+        <button type="button" ng-click="localBrowse()" ng-disabled="serverStatus.response == 'Stopped'" class="btn btn-primary" id="local-browse">Browse</button>
+      </div>
+    </div>
+  </div>
+</section>

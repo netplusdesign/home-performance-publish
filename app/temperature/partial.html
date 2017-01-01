@@ -1,0 +1,17 @@
+<section id="temperature">
+  <h2>Temperature</h2>
+  <div class="form-horizontal">
+    <div class="form-group">
+      <label for="trim" class="col-sm-4 control-label"></label>
+      <div class="col-sm-8">
+        <button type="button" ng-click="trim()" class="btn btn-primary" id="trim">Trim Temperature Files</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Status</label>
+      <div class="col-sm-8">
+        <pre class="form-control-static">{{ temperatureStatus.response }}</pre>
+      </div>
+    </div>
+  </div>
+</section>

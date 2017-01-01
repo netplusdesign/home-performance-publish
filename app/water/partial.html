@@ -1,0 +1,28 @@
+<section id="water">
+  <h2>Water</h2>
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td>
+        </th>
+        <td>
+          Main
+        </th>
+        <td>
+          Hot
+        </th>
+      </tr>
+      <tr ng-repeat="month in water.items">
+        <td>
+          {{month.date}}
+        </td>
+        <td>
+          <input type="number" ng-model="month.main" ng-change="updateWater()" class="form-control">
+        </td>
+        <td>
+          <input type="number" ng-model="month.hot" ng-change="updateWater()" class="form-control">
+        </td>
+        </tr
+      </tbody>
+    </table>
+  </section>
