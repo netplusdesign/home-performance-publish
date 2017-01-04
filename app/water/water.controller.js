@@ -24,13 +24,8 @@ angular.module('myApp.controllers.water', []).
       $scope.water = { items: [] }
 
 			$scope.updateWater = function() {
-        // for each row make 2 objects
-        var waterJSON = [];
-        for (let item of $scope.water.items) {
-          waterJSON.push({ 'date': item.date, 'type': 'main', 'gallons': item.main, 'device_id':6 });
-          waterJSON.push({ 'date': item.date, 'type': 'hot', 'gallons': item.hot, 'device_id':7 });
-        }
-        settings.saveSettings('water', waterJSON);
+
+        settings.saveSettings( 'water', expand($scope.water.items) );
       }
 
       var updateWaterTable = function() {
@@ -41,24 +36,45 @@ angular.module('myApp.controllers.water', []).
         }
       },
 
+			expand = function(arr) {
+				// for each row make 2 objects
+        var waterJSON = [];
+        for (let item of arr) {
+          waterJSON.push({ 'date': item.date, 'type': 'main', 'gallons': item.main, 'device_id':6 });
+          waterJSON.push({ 'date': item.date, 'type': 'hot', 'gallons': item.hot, 'device_id':7 });
+        }
+				return waterJSON;
+			},
+
+			shrink = function(arr, curr) {
+				// for every 2 rows make 1 object
+				for (var i=0; i<arr.length; i++) {
+					if (curr.date == arr[i].date) {
+						// add property & value to object in array
+						arr[i][curr.type] = curr.gallons;
+						return arr;
+					}
+				}
+				// then add it
+				let obj = { 'date': curr.date };
+				obj[curr.type] = curr.gallons;
+				arr.push(obj);
+				return arr;
+			},
+
       initWaterTable = function() {
         var waterSettings = settings.readSettings('water');
 				if ( waterSettings.length > 0 ) {
-	        var catWater = function(arr, curr) {
-	          for (var i=0; i<arr.length; i++) {
-	            if (curr.date == arr[i].date) {
-	              // add property & value to object in array
-	              arr[i][curr.type] = curr.gallons;
-	              return arr;
-	            }
-	          }
-	          // then add it
-	          let obj = { 'date': curr.date };
-	          obj[curr.type] = curr.gallons;
-	          arr.push(obj);
-	          return arr;
-	        }
-	        $scope.water.items = waterSettings.reduce( catWater, [{ 'date': waterSettings[0].date, 'main': waterSettings[0].gallons }] );
+					// if any water settings match new start/end dates then update $scope.water.items
+	        var items = waterSettings.reduce( shrink, [{ 'date': waterSettings[0].date, 'main': waterSettings[0].gallons }] );
+					for (var i=0; i<$scope.water.items.length; i++) {
+						for (var j=0; j<items.length; j++) {
+							if ($scope.water.items[i].date == items[j].date) {
+								$scope.water.items[i].main = items[j].main;
+								$scope.water.items[i].hot = items[j].hot;
+							}
+						}
+					}
 				}
       }
 
