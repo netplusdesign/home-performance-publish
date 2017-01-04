@@ -20,8 +20,17 @@ angular.module('myApp.directives', ['electangular']).
 
 				var copy = function() {
 					var code = document.querySelector(attr.element).innerHTML
+						.replace(/ng-if="prior.totals.net<0"/g, '\b')
+						.replace(/ng-if="prior.totals.net>=0"/g, '\b')
+						.replace(/ng-if="current.totals.net<0"/g, '\b')
+						.replace(/ng-if="current.totals.net>=0"/g, '\b')
+						.replace(/ng-if="years.totals.net<0"/g, '\b')
+						.replace(/ng-if="years.totals.net>=0"/g, '\b')
+						.replace(/ng-if="item.net<0"/g, '\b')
+						.replace(/ng-if="item.net>=0"/g, '\b')
 						.replace(/class="ng-binding"/g, '\b')
 						.replace(/class="ng-scope"/g, '\b')
+						.replace(/class="ng-binding ng-scope"/g, '\b')
 						.replace(/<!--[\s\S]*?-->/g, '\b')
 						.replace(/&amp;/g, '&')
 						.replace(/ng-repeat="item in years.items"/g, '\b')
