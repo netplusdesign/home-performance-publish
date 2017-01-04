@@ -14,7 +14,7 @@ do
   echo Trimming $i
   for j in $4
   do
-    grep -e $j $i >> $2$i.bak
+    grep -e $j $i >> $2$i
   done
 done
 
